@@ -1,7 +1,7 @@
 <section class="our-company">
 	<div class="container">
 		<div class="content">
-			<h2>Unser Unternehmen</h2>
+			<h2 id="unser-unternehmen" name="unser-unternehmen">Unser Unternehmen</h2>
 			<hr />
 			<p>Die Firma Alarmanlagenbau-Korsing GmbH & Co. KG
 				gibt es seit dem 1.10.1990. Unseren Kunden bieten wir einen 24-Stunden-Service an. Alle Zulassungen, die

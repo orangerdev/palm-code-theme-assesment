@@ -1,6 +1,6 @@
 <section class="contact-form">
 	<div class="container">
-		<h2>Kontaktformular</h2>
+		<h2 id="kontaktformular" name="kontaktformular">Kontaktformular</h2>
 		<form id="contact-form" action="" method="post" enctype="multipart/form-data">
 			<div class="form-groups">
 				<div class="form-group">

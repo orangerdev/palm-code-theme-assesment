@@ -1,7 +1,8 @@
 <section class="our-testimonial regular-section">
 	<div class="container">
 		<header>
-			<h2 class="section-title">Was unsere Kunden sagen</h2>
+			<h2 id="wa-unsere-kunden-sagen" name="wa-unsere-kunden-sagen" class="section-title">
+				Was unsere Kunden sagen</h2>
 			<hr />
 			<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 				tempor incididunt ut labore et

@@ -1,7 +1,7 @@
 <section class="our-services regular-section">
 	<div class="container">
 		<header>
-			<h2 class="section-title">Our Services</h2>
+			<h2 id="our-services" name="our-services" class="section-title">Our Services</h2>
 			<hr />
 			<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 				tempor incididunt ut labore et
