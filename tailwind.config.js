@@ -5,6 +5,7 @@ module.exports = {
 		"./header.php",
 		"./footer.php",
 		"./template-parts/*.php",
+		"./template-parts/*/*.php",
 	],
 	theme: {
 		extend: {

@@ -256,15 +256,15 @@ body.admin-bar .site-header {
 
 .contact-form .container form .form-group input,
 .contact-form .container form .form-group select {
-	@apply flex-grow;
+	@apply flex-grow outline-none;
 }
 
 .contact-form .container form .form-group textarea {
-	@apply h-32;
+	@apply h-32 w-full outline-none;
 }
 
 .contact-form .form-group .file-drag-drop-area-container {
-	@apply border border-dashed border-light-grey text-center py-12 px-4 !bg-transparent;
+	@apply border-dashed border-2 border-light-grey text-center py-12 px-4 !bg-transparent;
 }
 
 .contact-form .form-group .file-drag-drop-area-container.drag-over {
