@@ -1,7 +1,7 @@
 <section class="contact-form">
 	<div class="container">
 		<h2>Kontaktformular</h2>
-		<form action="" method="post" enctype="multipart/form-data">
+		<form id="contact-form" action="" method="post" enctype="multipart/form-data">
 			<div class="form-groups">
 				<div class="form-group">
 					<label for="name">Name<sup>*</sup></label>
@@ -15,7 +15,7 @@
 			<div class="form-groups">
 				<div class="form-group">
 					<label for="phone">Telefonnummer<sup>*</sup></label>
-					<input type="tel" id="phone" name="phone" />
+					<input type="tel" id="phone" name="phone" required />
 				</div>
 				<div class="form-group">
 					<label for="service">Services<sup>*</sup></label>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="form-group">
 				<label for="message">Nachricht</label>
-				<textarea name="message" id="message" required></textarea>
+				<textarea name="message" id="message"></textarea>
 			</div>
 			<div class="form-group upload-file">
 				<input type="hidden" id="file-url" name="file-url" />
@@ -44,6 +44,9 @@
 				</ul>
 			</div>
 			<button type="submit">Jetz Anfragen</button>
+			<div id="contact-form-message" class="message hidden">
+				<p></p>
+			</div>
 			<?php wp_nonce_field( 'contact_form', 'contact_form_nonce' ); ?>
 
 		</form>

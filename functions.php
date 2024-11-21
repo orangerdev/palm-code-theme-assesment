@@ -159,6 +159,8 @@ function palm_code_assesment_scripts() {
 		wp_localize_script( 'palm-code-assesment', 'palm_code_assesment', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'nonce' => wp_create_nonce( 'plupload_nonce' ),
+			'contact_form_url' => rest_url( 'palm-code/v1/contact-data' ),
+			'rest_nonce' => wp_create_nonce( 'wp_rest' ),
 		) );
 	}
 }

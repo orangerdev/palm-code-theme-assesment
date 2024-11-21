@@ -1,5 +1,6 @@
 (function ($) {
 	$(document).ready(function () {
+		// Handle file uploader in the contact form
 		var uploader = new plupload.Uploader({
 			url: palm_code_assesment.ajax_url,
 			filters: {
@@ -8,8 +9,8 @@
 				prevent_duplicates: true,
 			},
 			multipart_params: {
-				_ajax_nonce: palm_code_assesment.nonce,
-				action: "upload_image",
+				plupload_nonce: palm_code_assesment.nonce,
+				action: "upload-image",
 			},
 			drop_element: "file-drag-drop-area",
 			browse_button: "file-drag-drop-area",
@@ -31,6 +32,45 @@
 			);
 		});
 
+		var contactMessage = $("#contact-form-message");
+
+		function submitForm() {
+			var formData = new FormData($("#contact-form")[0]);
+
+			$.ajax({
+				url: palm_code_assesment.contact_form_url,
+				type: "POST",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function (xhr) {
+					xhr.setRequestHeader("X-WP-Nonce", palm_code_assesment.rest_nonce);
+				},
+				success: function (data) {
+					if (data.message) {
+						contactMessage
+							.html(data.message)
+							.removeClass("error hidden")
+							.addClass("success");
+						// Clear the form
+						$("#contact-form").trigger("reset");
+					} else {
+						contactMessage
+							.html("There was an error submitting the form")
+							.removeClass("success hidden")
+							.addClass("error");
+					}
+				},
+				error: function (xhr, status, error) {
+					console.error("Error:", error);
+					contactMessage
+						.html("There was an error submitting the form")
+						.removeClass("success hidden")
+						.addClass("error");
+				},
+			});
+		}
+
 		$("#contact-form").on("submit", function (e) {
 			e.preventDefault();
 
@@ -38,25 +78,32 @@
 				uploader.bind("FileUploaded", function (up, file, response) {
 					var result = $.parseJSON(response.response);
 					if (result.success) {
-						$("#file-url").val(result.data.url);
-						$("#contact-form")[0].submit();
+						$("#file-url").val(result.url);
+						submitForm();
 					} else {
-						alert("Upload failed: " + result.data.error);
+						contactMessage
+							.html(result.message)
+							.removeClass("success hidden")
+							.addClass("error");
 					}
 				});
 
 				uploader.bind("Error", function (up, err) {
-					alert("Error: " + err.message);
+					contactMessage
+						.html(err.message)
+						.removeClass("success hidden")
+						.addClass("error");
 				});
 
 				uploader.start();
 			} else {
-				this.submit();
+				submitForm();
 			}
 		});
 
 		uploader.init();
 
+		// Handle sticky header
 		var header = $("#masthead");
 
 		$(window).on("scroll", function () {
@@ -67,6 +114,7 @@
 			}
 		});
 
+		// Handle testimonial slider
 		$(".slick").slick({
 			dots: false,
 			navs: true,
@@ -90,6 +138,7 @@
 			],
 		});
 
+		// Handle offcanvas menu
 		$(".menu-toggle").on("click", function () {
 			$("aside.offcanvas-menu").removeClass("hide-menu").addClass("show-menu");
 		});

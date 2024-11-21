@@ -287,6 +287,14 @@ body.admin-bar .site-header {
 	@apply mt-8 bg-transparent text-black border border-bourgoundy text-medium font-bold leading-5 py-4 px-8 hover:bg-bourgoundy hover:text-white self-start;
 }
 
+#contact-form-message.success {
+	@apply bg-green-100 text-green-700 p-8;
+}
+
+#contact-form-message.error {
+	@apply bg-red-100 text-red-700 p-8;
+}
+
 /**
 * Footer
 */
