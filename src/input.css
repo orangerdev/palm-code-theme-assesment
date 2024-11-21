@@ -1,0 +1,357 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-transparent {
+	@apply inline-block bg-transparent text-white border border-bourgoundy text-medium font-bold leading-5 py-2 px-8 hover:bg-bourgoundy hover:text-white;
+}
+
+body {
+	@apply font-verdana font-normal text-lg;
+}
+
+a:hover {
+	@apply text-bourgoundy;
+}
+
+.container {
+	@apply mx-auto px-4 md:px-8 max-w-7xl;
+}
+
+/**
+* Site Header
+*/
+
+.site-header {
+	@apply fixed top-0 z-50 bg-transparent left-0 w-screen;
+}
+
+.site-header.scrolled {
+	@apply bg-white shadow-md;
+}
+
+body.admin-bar .site-header {
+	@apply top-[32px];
+}
+
+.site-header .container {
+	@apply flex items-center justify-between p-4 gap-4;
+}
+
+.site-header .custom-logo-link {
+	@apply order-1 flex-grow lg:flex-grow-0;
+}
+
+.site-header .main-navigation {
+	@apply lg:flex-grow flex items-end justify-end order-3 lg:order-2;
+}
+
+.site-header .main-navigation .menu-toggle {
+	@apply block lg:hidden bg-very-light-grey p-2 rounded border self-end;
+}
+
+.site-header .main-navigation .menu-main-menu-container {
+	@apply hidden lg:block;
+}
+
+.site-header .main-navigation ul {
+	@apply flex justify-end items-center gap-4;
+}
+
+.site-header .main-navigation ul li a {
+	@apply text-white inline-block border-transparent border-b hover:border-white;
+}
+
+.site-header.scrolled .main-navigation ul li a {
+	@apply text-black;
+}
+
+.site-header .button-transparent {
+	@apply hidden md:block order-2 lg:order-3;
+}
+
+.site-header.scrolled .button-transparent {
+	@apply text-bourgoundy hover:text-white;
+}
+
+/**
+* Hero Section
+*/
+
+.hero-section {
+	background-image: url("../images/hero.webp");
+	@apply bg-cover bg-center bg-no-repeat h-screen text-white flex items-center justify-center;
+}
+
+.hero-section .container {
+	@apply text-center;
+}
+
+.hero-section .container .title {
+	@apply text-4xl md:text-[64px] md:leading-[78px] font-bold uppercase;
+}
+
+.hero-section .container .description {
+	@apply text-lg leading-[22px] font-normal mx-auto max-w-4xl mt-12;
+}
+
+.hero-section .container a {
+	@apply mt-8;
+}
+
+/**
+* Regular Section
+*/
+
+.regular-section .container {
+	@apply py-12 md:py-24 flex flex-col gap-16;
+}
+
+.regular-section .container header {
+	@apply text-center flex flex-col gap-4;
+}
+
+.regular-section .container header .section-title {
+	@apply text-2xl md:text-5xl md:leading-[58px] uppercase  font-bold;
+}
+
+.regular-section .container header hr {
+	@apply w-20 h-1 bg-bourgoundy mx-auto;
+}
+
+.regular-section .container header .section-description {
+	@apply text-lg leading-[22px] font-normal mx-auto max-w-4xl;
+}
+
+/**
+* Our Services
+*/
+
+.our-services .content {
+	@apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.our-services .content .card {
+	@apply border-light-grey border px-8 py-12;
+}
+
+.our-services .content .card figure {
+	@apply space-y-2;
+}
+
+.our-services .content .card figcaption {
+	@apply space-y-2;
+}
+
+.our-services .content .card h3 {
+	@apply text-sm leading-[17px] font-bold uppercase;
+}
+
+.our-services .content .card p {
+	@apply text-xs leading-[14.58px] font-normal;
+}
+
+/**
+* Our Company
+*/
+
+.our-company {
+	@apply bg-very-light-grey;
+}
+
+.our-company .container {
+	@apply py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+.our-company .container .content {
+	@apply flex flex-col justify-center gap-4 order-2 md:order-1;
+}
+
+.our-company .container .content h2 {
+	@apply text-4xl md:text-5xl md:leading-[58px] uppercase font-bold;
+}
+
+.our-company .container .content hr {
+	@apply w-20 h-1 bg-bourgoundy;
+}
+
+.our-company .container .content p {
+	@apply text-lg leading-[22px] font-normal;
+}
+
+.our-company .container .content .image {
+	@apply order-1 md:order-2;
+}
+
+/**
+* Testimonial
+*/
+
+.our-testimonial .slick-container {
+	@apply px-4 md:px-12 relative;
+}
+
+.our-testimonial .slick-container .slick-arrow {
+	@apply absolute top-1/2 transform -translate-y-1/2 w-[14px] h-[24px];
+}
+
+.our-testimonial .slick-container .slick-prev {
+	background-image: url("../images/arrow-left.svg");
+	@apply -left-4 object-cover;
+}
+
+.our-testimonial .slick-container .slick-next {
+	@apply -right-4 object-cover;
+	background-image: url("../images/arrow-right.svg");
+}
+
+.our-testimonial .slick-container .card {
+	@apply m-4 flex flex-col justify-center
+		items-center gap-4 text-center px-6 py-12 shadow-md shadow-[rgba(0,0,0,0.1)];
+}
+
+.our-testimonial .slick-container .card .rating {
+	@apply flex justify-center gap-2;
+}
+
+.our-testimonial .slick-container .card .author {
+	@apply italic text-lg leading-[22px] font-normal mt-8;
+}
+
+/**
+* Contact Form
+*/
+
+.contact-form .container {
+	@apply bg-very-light-grey space-y-12 py-10;
+}
+
+.contact-form .container h2 {
+	@apply text-[32px] leading-[39px] font-bold text-center;
+}
+
+.contact-form .container form {
+	@apply max-w-[850px] flex flex-col gap-4 mx-auto;
+}
+
+.contact-form .container form .form-groups {
+	@apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.contact-form .container form .form-group {
+	@apply flex flex-row gap-4 bg-white flex-grow py-4 pr-4 pl-6 text-medium leading-5;
+}
+
+.contact-form .container form .form-group.upload-file {
+	@apply !bg-transparent !p-0 !block;
+}
+
+.contact-form .container form .form-group label {
+	@apply text-label;
+}
+
+.contact-form .container form .form-group label sup {
+	@apply text-red-500;
+}
+
+.contact-form .container form .form-group input,
+.contact-form .container form .form-group select {
+	@apply flex-grow;
+}
+
+.contact-form .container form .form-group textarea {
+	@apply h-32;
+}
+
+.contact-form .form-group .file-drag-drop-area-container {
+	@apply border border-dashed border-light-grey text-center py-12 px-4 !bg-transparent;
+}
+
+.contact-form .form-group .file-drag-drop-area-container.drag-over {
+	@apply border-bourgoundy;
+}
+
+.contact-form .container .form-information {
+	@apply mt-8;
+}
+
+.contact-form .container .form-information li {
+	@apply text-medium leading-5;
+}
+
+.contact-form .container .form-information li .required {
+	@apply text-red-500;
+}
+
+.contact-form .container form button {
+	@apply mt-8 bg-transparent text-black border border-bourgoundy text-medium font-bold leading-5 py-4 px-8 hover:bg-bourgoundy hover:text-white self-start;
+}
+
+/**
+* Footer
+*/
+
+.site-footer {
+	@apply bg-very-light-grey mt-32 pt-20 pb-12;
+}
+
+.site-footer .container {
+	@apply space-y-8;
+}
+
+.site-footer .site-info {
+	@apply grid grid-cols-1  md:grid-cols-[1fr_200px_200px_1fr] gap-12;
+}
+
+.site-footer .site-info .widget {
+	@apply space-y-6;
+}
+
+.site-footer .site-info .widget {
+	@apply text-center md:text-left;
+}
+
+.site-footer .site-info .widget-title {
+	@apply text-lg leading-[22px] font-bold;
+}
+
+.site-footer .site-info .widget-content {
+	@apply space-y-2;
+}
+
+.site-footer .site-info .widget-content ul {
+	@apply space-y-2;
+}
+
+.site-footer .bottom-link ul {
+	@apply flex justify-center gap-4;
+}
+
+.site-footer .bottom-link ul li:not(:first-child)::before {
+	content: "•";
+	@apply mr-4;
+}
+
+.offcanvas-menu {
+	@apply fixed top-0 w-80 h-screen z-50 px-4 py-20  bg-very-light-grey flex flex-col gap-8 items-center;
+}
+
+.offcanvas-menu.hide-menu {
+	@apply -right-80;
+}
+
+.offcanvas-menu.show-menu {
+	@apply right-0;
+}
+
+.offcanvas-menu button {
+	@apply self-end;
+}
+
+.offcanvas-menu .menu a {
+	@apply block text-center border-b border-gray-400 py-4;
+}
+
+.offcanvas-menu .button-transparent {
+	@apply text-bourgoundy hover:text-white;
+}
