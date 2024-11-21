@@ -43,9 +43,6 @@
 				data: formData,
 				processData: false,
 				contentType: false,
-				beforeSend: function (xhr) {
-					xhr.setRequestHeader("X-WP-Nonce", palm_code_assesment.rest_nonce);
-				},
 				success: function (data) {
 					if (data.message) {
 						contactMessage

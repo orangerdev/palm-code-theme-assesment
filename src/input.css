@@ -179,7 +179,7 @@ body.admin-bar .site-header {
 	@apply text-lg leading-[22px] font-normal;
 }
 
-.our-company .container .content .image {
+.our-company .container .image {
 	@apply order-1 md:order-2;
 }
 
