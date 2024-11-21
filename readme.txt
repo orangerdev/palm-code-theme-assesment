@@ -1,7 +1,7 @@
 === Palm Code Assesment ===
 
 Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images
 
 Requires at least: 4.5
 Tested up to: 5.4
@@ -30,7 +30,7 @@ Palm Code Assesment includes support for WooCommerce and for Infinite Scroll in 
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - 2024 Nov 21 =
 * Initial release
 
 == Credits ==
